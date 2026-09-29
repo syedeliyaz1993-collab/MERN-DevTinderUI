@@ -2,21 +2,27 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 import BodyComp from "./Body"
 import LoginComp from "./Login"
 import ProfileComp from "./Profile"
+import { Provider } from "react-redux"
+import appStore from "./utils/appStore"
+import FeedComp from "./Feed"
 
 function App() {
 
   return (
     <div>
+      <Provider store={appStore}>
       <BrowserRouter basename="/">
         <Routes>
 
           <Route path="/" element={<BodyComp />}>
             <Route path="/login" element={<LoginComp />} />
             <Route path="/profile" element={<ProfileComp />} />
+            <Route path="/feed" element={<FeedComp />} />
           </Route>
 
         </Routes>
       </BrowserRouter>
+      </Provider>
 
 
       {/* <h1 className="text-3xl font-bold">
