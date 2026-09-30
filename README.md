@@ -23,3 +23,11 @@ Create Store & Slice in utils
 Create Store and with configureStore => Provider => create Slice => add reducer to store
 With useDispatch we can store data 
 with useSelector to read the stored data by subscribing to the store
+
+
+## Part3 Feed Implementations
+Implement logout with useEffect hook
+useNavigate Hook for routing the page always return it 
+Using Link component 
+Error handling for login 
+made

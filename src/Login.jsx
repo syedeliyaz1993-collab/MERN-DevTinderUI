@@ -7,8 +7,9 @@ import { BASE_URL } from "./utils/constants";
 
 const LoginComp = () => {
 
-    const [emailId, setEmailId] = useState("");
-    const [password, setPassword] = useState("");
+    const [emailId, setEmailId] = useState("syed@gmail.com");
+    const [password, setPassword] = useState("Syed@123");
+    const [error, setError] = useState("");
     //useDispatch for storing data in redux
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -19,10 +20,11 @@ const LoginComp = () => {
                 emailId, password
             }, {withCredentials : true});
             console.log('APIRES', apiRes);
-            dispatch(addUser(apiRes.data));
+            dispatch(addUser(apiRes.data?.data ?? apiRes.data));
             return navigate('/feed')
         } catch (err) {
             console.log(err)
+            setError(err.response?.data?.message)
         }
         
     }
@@ -43,6 +45,7 @@ const LoginComp = () => {
                             <input type="text" className="input" placeholder="Enter password here" value={password} onChange={(e) => setPassword(e.target.value)}/>
                         </fieldset>
                     </div>
+                    <p className="text-red-500">{error}</p>
                     <div className="card-actions justify-center">
                         <button className="btn btn-primary" onClick={handleLoginHandler}>Login</button>
                     </div>
