@@ -75,7 +75,7 @@ const EditProfile = ({ user }) => {
             <UserCard user={{ firstName, lastName, age, gender, skills, about, photoUrl }} />
             {toast && <div className="toast toast-top toast-start">
                
-                <div className="alert alert-success">
+                <div className="alert alert-success flex justify-center">
                     <span>Profile updated successfully.</span>
                 </div>
             </div>}
