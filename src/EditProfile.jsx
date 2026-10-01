@@ -14,12 +14,13 @@ const EditProfile = ({ user }) => {
     const [gender, setGender] = useState(user.gender);
     const [skills, setSkills] = useState(user.skills);
     const [about, setAbout] = useState(user.about);
+    const [photoUrl, setPhotoUrl] = useState(user.photoUrl ?? '')
      const[toast, setToast] = useState(false);
     //once we save that needs to shpe in profile so store the data in store
     const dispatch = useDispatch();
 
     const handleEditHandler = async () => {
-        const saveProfile = await axios.patch(BASE_URL + '/profile/edit', { firstName, lastName, age, gender, skills, about },
+        const saveProfile = await axios.patch(BASE_URL + '/profile/edit', { firstName, lastName, age, gender, skills, about,photoUrl },
             { withCredentials: true });
 
         dispatch(addUser(saveProfile.data.data));
@@ -54,6 +55,10 @@ const EditProfile = ({ user }) => {
                             <input type="text" className="input" placeholder="Enter Gender here" value={gender} onChange={(e) => setGender(e.target.value)} />
                         </fieldset>
                         <fieldset className="fieldset">
+                            <legend className="fieldset-legend">PhotoUrl</legend>
+                            <input type="text" className="input" placeholder="Enter PhotoUrl here" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} />
+                        </fieldset>
+                        <fieldset className="fieldset">
                             <legend className="fieldset-legend">Skills</legend>
                             <input type="text" className="input" placeholder="Enter Skills here" value={skills} onChange={(e) => setSkills(e.target.value)} />
                         </fieldset>
@@ -67,7 +72,7 @@ const EditProfile = ({ user }) => {
                     </div>
                 </div>
             </div>
-            <UserCard user={{ firstName, lastName, age, gender, skills, about }} />
+            <UserCard user={{ firstName, lastName, age, gender, skills, about, photoUrl }} />
             {toast && <div className="toast toast-top toast-start">
                
                 <div className="alert alert-success">

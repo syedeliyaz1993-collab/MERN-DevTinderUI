@@ -3,18 +3,19 @@
 const UserCard = ({user}) => {
     console.log(user);
 
-    const {firstName, lastName, age, gender, skills, about} = user;
+    const {firstName, lastName, age, gender, skills, about, photoUrl} = user;
+    
     return (
         <div className="flex justify-center my-4">
             <div className="card bg-base-100 w-96 shadow-sm">
                 <figure className="w-96 h-80">
                     <img
-                        src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                        alt="Shoes" />
+                        src={photoUrl}
+                        alt="userPhoto" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title"></h2>
-                    <p>{firstName.toUpperCase() + " " + lastName.toUpperCase()}</p>
+                    <p>{firstName + " " + lastName}</p>
                     <p>{age}</p>
                     <p>{gender}</p>
                     <p>{skills}</p>

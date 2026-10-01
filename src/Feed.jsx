@@ -27,7 +27,7 @@ const FeedComp = () => {
 
   return (
     <div> 
-      {userFeedData && <UserCard user={userFeedData[0]}/>}
+      {userFeedData && userFeedData.map((e, i) => <UserCard key={e._id ?? i} user={e} />)}
     </div>
   )
 }

@@ -24,7 +24,7 @@ const NavBarComp = () => {
     return (
         <div className="navbar shadow-sm bg-neutral text-white">
             <div className="flex-1">
-                <Link  to='/' className="btn btn-ghost text-xl text-white">DEV-TINDER APP</Link>
+                <Link to='/feed' className="btn btn-ghost text-xl text-white">DEV-TINDER APP</Link>
             </div>
             {user && <div className="flex gap-2">
                 <div>{user.firstName} {user.lastName}</div>

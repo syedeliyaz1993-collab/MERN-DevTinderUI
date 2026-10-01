@@ -30,4 +30,7 @@ Implement logout with useEffect hook
 useNavigate Hook for routing the page always return it 
 Using Link component 
 Error handling for login 
-made
+
+Created the new user with proper data from API 
+editing profile 
+Toast msg
