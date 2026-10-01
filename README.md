@@ -38,3 +38,6 @@ Toast msg
 ## Part 4 Own/Accepted & Pending Connections API 
 
 Own/Accepted Connections, Pending connections APIs integration DOne with 2 slices
+
+## Part 5 Creating Singup form 
+E2E Testing 
