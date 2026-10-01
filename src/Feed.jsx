@@ -24,7 +24,7 @@ const FeedComp = () => {
     getUserFeed();
   }, [])
 
-
+  if(userFeedData === null) return <h1 className="flex justify-center my-10">No Feed Found</h1>
   return (
     <div> 
       {userFeedData && userFeedData.map((e, i) => <UserCard key={e._id ?? i} user={e} />)}

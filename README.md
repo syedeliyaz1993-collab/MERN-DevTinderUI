@@ -34,3 +34,7 @@ Error handling for login
 Created the new user with proper data from API 
 editing profile 
 Toast msg
+
+## Part 4 Own/Accepted & Pending Connections API 
+
+Own/Accepted Connections, Pending connections APIs integration DOne with 2 slices
